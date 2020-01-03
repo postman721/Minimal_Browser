@@ -58,5 +58,5 @@ QT5, QWebview and its friends. Names vary upon distributions. See header file of
 
 
 - C++ is fun to use with QT5.
-- My previous Python based browsers started experiencing problems on Debian environent(certain modules missing etc.) 
-- C++ hardly ever experiences trouble on Linux.
+- My previous Python based browsers started experiencing problems on Debian (certain modules missing etc.) 
+- C++ hardly ever experiences trouble on any Linux.
