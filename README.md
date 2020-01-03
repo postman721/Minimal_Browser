@@ -43,7 +43,7 @@ Do not add www. or http or https in front - things will fail.
 
 Minimal browser does not yet support downloading files by clicking on them.
 
-To download a file, use Copy Link option from a right-click menu. Next, open a terminal and do wget <paste_your_link_here>.
+To download a file, use Copy Link option from the right-click menu. Next, open a terminal and do <b>wget <paste_your_link_here></b>
 
 
 <b>Dependencies:</b> 
