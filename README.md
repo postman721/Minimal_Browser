@@ -4,6 +4,8 @@ Copyright (c) 2020 JJ Posti <techtimejourney.net>
 
 This is free software, and you are welcome to redistribute it under GPL Version 2, June 1991″
 
+![minimal](https://user-images.githubusercontent.com/29865797/71751450-45cf5d80-2e84-11ea-9c92-1ea1cad6b8eb.jpg)
+
 
 <b>Features:</b>
 
