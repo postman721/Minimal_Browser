@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/go-home.png</file>
+        <file>icons/document-print.png</file>
+        <file>icons/go-next.png</file>
+        <file>icons/go-previous.png</file>
+        <file>icons/view-refresh.png</file>
+        <file>icons/zoom-in.png</file>
+        <file>icons/zoom-out.png</file>
+        <file>icons/document-save.png</file>
+        <file>icons/process-stop.png</file>
+    </qresource>
+</RCC>

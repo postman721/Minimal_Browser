@@ -5,30 +5,86 @@
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QKeyEvent>
+#include <QString>
 #include <QWebView>
 #include <QtWidgets>
 #include <QUrl>
-#include <QString>
 #include <QtPrintSupport>
 #include <QPrintDialog>
 #include <QPrinter>
-#include <QNetworkReply>
-#include <QNetworkRequest>
 #include <QPageLayout>
+#include <QWebInspector>
+#include <QCoreApplication>
+#include <QProcess>
+
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+//Basic file downloading.
+    ui->webView->page()->setForwardUnsupportedContent(true);
+
+
     ui->webView->load(QUrl("https://d3q5u8uru3z1u9.cloudfront.net/postx/index.html"));
 
 //Delegate links to new webview
     ui->webView->page()->setLinkDelegationPolicy(QWebPage::DelegateAllLinks);
+
+
+// Settings
+    ui->webView->page()->settings()->setAttribute(QWebSettings::JavascriptEnabled,true);
+    ui->webView->page()->settings()->setAttribute(QWebSettings::PluginsEnabled,true);
+    ui->webView->page()->settings()->setAttribute(QWebSettings::PrivateBrowsingEnabled,true);
+    ui->webView->page()->settings()->setAttribute(QWebSettings::SpatialNavigationEnabled,true);
+    ui->webView->page()->settings()->setAttribute(QWebSettings::PrivateBrowsingEnabled,true);
+    ui->webView->page()->settings()->setAttribute(QWebSettings::Accelerated2dCanvasEnabled,true);
+    ui->webView->page()->settings()->setAttribute(QWebSettings::AcceleratedCompositingEnabled,true);
+    ui->webView->page()->settings()->setAttribute(QWebSettings::AutoLoadImages,true);
+    ui->webView->page()->settings()->setAttribute(QWebSettings::ScrollAnimatorEnabled,true);
+    ui->webView->page()->settings()->setAttribute(QWebSettings::DeveloperExtrasEnabled,true);
+    ui->webView->page()->settings()->setAttribute(QWebSettings::FullScreenSupportEnabled,true);
+    ui->webView->page()->settings()->setAttribute(QWebSettings::WebGLEnabled,true);
+    ui->webView->page()->settings()->setAttribute(QWebSettings::JavascriptCanOpenWindows,true);
+    ui->webView->page()->settings()->setAttribute(QWebSettings::LocalContentCanAccessRemoteUrls, true);
+
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+
+
+// Saving with wget
+
+void MainWindow::on_save_clicked() {
+    QFileDialog dialog(this);
+    dialog.setViewMode(QFileDialog::Detail);
+    dialog.setAttribute(Qt::WA_DeleteOnClose);
+    QString urls= ui->webView->url().toString();
+    QString filename;
+    filename = QFileDialog::getSaveFileName(this, tr("Save File"),
+                                                "",
+                                                tr("All files (*"));
+
+    QString getme=ui->webView->url().toString();
+
+
+    QProcess proc;
+    QStringList args;
+    args << getme;
+    args << "-O";
+    args << filename;
+
+   proc.start("wget", args);
+        proc.waitForFinished();
+        qDebug() << proc.readAllStandardOutput();
+
 }
 
 void MainWindow::on_back_clicked()
@@ -91,8 +147,36 @@ else {ui->statusBar->showMessage("Loading has failed.");}
 void MainWindow::on_addressbar_returnPressed()
 {
     QString x;
+    x=ui->addressbar->text();
+
     QString y;
     y="https://";
-    x=ui->addressbar->text();
-    {ui->webView->load(QUrl(y+x));};
+
+    QString z;
+    z="www.";
+
+    if(ui->addressbar->text().startsWith(y)){ui->webView->load(QUrl(x));}
+    if(ui->addressbar->text().startsWith(z)){ui->webView->load(QUrl(y+x));}
+
+    }
+
+
+void MainWindow::on_searchme_returnPressed()
+{
+    QString searching;
+    searching=ui->searchme->text();
+    QString engine="https://www.google.com/search?&q=" + searching;
+    {ui->webView->load(QUrl(engine));};
 }
+
+void MainWindow::on_plus_clicked()
+{
+    ui->webView->setZoomFactor(ui->webView->zoomFactor()+.2);
+}
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    ui->webView->setZoomFactor(ui->webView->zoomFactor()-.2);
+
+}
+

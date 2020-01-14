@@ -17,6 +17,7 @@ public:
 
 private slots:
 
+
     void on_back_clicked();
 
     void on_forward_clicked();
@@ -35,8 +36,17 @@ private slots:
 
     void on_webView_loadFinished(bool arg1);
 
+    void on_searchme_returnPressed();
+
+    void on_plus_clicked();
+
+    void on_pushButton_2_clicked();
+
+    void on_save_clicked();
+
 private:
     Ui::MainWindow *ui;
+
 };
 
 #endif // MAINWINDOW_H
