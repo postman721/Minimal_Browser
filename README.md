@@ -4,10 +4,35 @@ Copyright (c) 2020 JJ Posti <techtimejourney.net>
 
 This is free software, and you are welcome to redistribute it under GPL Version 2, June 1991″
 
-![minimal](https://user-images.githubusercontent.com/29865797/71751450-45cf5d80-2e84-11ea-9c92-1ea1cad6b8eb.jpg)
+![minimal2](https://user-images.githubusercontent.com/29865797/72383214-aa5fa780-3723-11ea-8124-98cd12362701.jpg)
+
+Features added by v2.
 
 
-<b>Features:</b>
+ - Google as a search engine.
+ - Zoom in and out buttons added.
+ - Web-inspector added.
+ - Browsing now accepts: www.some_address.something OR https://some_address.something 
+ - Save file or object: Saves whatever is listed on addressbar location. Using Wget via QProcess.
+ - Tooltips for buttons.
+ - Gui is redesigned and has darker colors now.
+ 
+ - Javascript set to enabled.
+ - Installed system plugins set to enabled.
+ - PrivateBrowsingEnabled,true.
+ - SpatialNavigationEnabled,true.
+ - Accelerated2dCanvasEnabled,true.
+ - AcceleratedCompositingEnabled.
+ - AutoLoadImages,true.
+ - ScrollAnimatorEnabled,true.
+ - DeveloperExtrasEnabled,true.
+ - FullScreenSupportEnabled,true.
+ - WebGLEnabled,true.
+ - JavascriptCanOpenWindows,true.
+ - LocalContentCanAccessRemoteUrls, true.
+
+
+Features - since v1.
 
 - Go back. 
 - Go forward.
@@ -17,8 +42,6 @@ This is free software, and you are welcome to redistribute it under GPL Version 
 - Go Home (This points to current AWS hosted Postx Gnu/Linux landing page).
 - Does not support http. Https only.
 - Statusbar giving generic messages about page loading states.
-
-
 <b>Opening links and copying links:</b>
 
 
