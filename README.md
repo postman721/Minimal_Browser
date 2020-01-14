@@ -2,7 +2,7 @@ Minimal Browser is a C++ and QT5 browser.
 
 Copyright (c) 2020 JJ Posti <techtimejourney.net>
 
-This is free software, and you are welcome to redistribute it under GPL Version 2, June 1991″
+This is free software, and you are welcome to redistribute it under GPL Version 3"
 
 ![minimal2](https://user-images.githubusercontent.com/29865797/72383214-aa5fa780-3723-11ea-8124-98cd12362701.jpg)
 
