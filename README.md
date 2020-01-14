@@ -6,7 +6,9 @@ This is free software, and you are welcome to redistribute it under GPL Version 
 
 ![minimal2](https://user-images.githubusercontent.com/29865797/72383214-aa5fa780-3723-11ea-8124-98cd12362701.jpg)
 
-Licensing changes: GPL v2 is upgraded to GPL v3.
+<b>Licensing changes: Dual licensing model:</b> 
+
+GPL v2 is upgraded to GPL v3.
 Also adding Apache v2 license as an alternative possibility if GPL v3 is not desired.
 
 Features added by v2.
